@@ -2,7 +2,7 @@ pipeline
 {
     agent 
         { 
-            label 'ubuntu-spc'
+           label 'ubuntu-spc'
         }
     stages
     {
