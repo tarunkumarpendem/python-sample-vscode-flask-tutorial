@@ -2,7 +2,7 @@ pipeline
 {
     agent 
         { 
-           label 'ubuntu-spc'
+           label 'ubuntu'
         }
     stages
     {
@@ -10,20 +10,19 @@ pipeline
         {
             steps
             {
-               git credentialsId: 'Ubuntu-Node', 
+               git credentialsId: 'ubuntu', 
                    url: 'https://github.com/tarunkumarpendem/python-sample-vscode-flask-tutorial.git',
-                   branch: 'master'
+                   branch: 'python'
             }
         }
         stage('shell_script')
         {
             steps
             {
-                sh """python3 -m pip install --upgrade pip setuptools wheel
-                      pip install -r requirements.txt
-                      pip install pytest pytest-azurepipelines
-                      pip install pytest-cov
-                      export PATH='/home/ubuntu/.local/bin:$PATH'
+                sh """python3 -m pip install --upgrade pip setuptools wheel,
+                      pip install -r requirements.txt,
+                      pip install pytest pytest-azurepipelines,
+                      pip install pytest-cov,
                       pytest test_test1.py"""
             }
         }
