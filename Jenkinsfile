@@ -6,7 +6,7 @@ pipeline
         }
     parameters
     {
-        choice(name: 'Branch_to_Build', choices: ['master', 'tutorial'], description: 'choose the branch')
+        choice(name: 'Branch_to_Build', choices: ['master', 'python'], description: 'choose the branch')
     }
     triggers 
     { 
